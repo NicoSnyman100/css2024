@@ -1,0 +1,97 @@
+
+nicos@Nico-ASUS MINGW64 ~
+$ history
+    1  echo "hello world"
+    2  echo $((5+5))
+    3  #storing variables
+    4  x=5
+    5  y=10
+    6  sum=$((x+y))
+    7  echo "The sum is: $sum"
+    8  #Directories
+    9  pwd #print current working directory
+   10  #Explore directories
+   11  ls #(list contents of current directory
+   12  ls -lh #list contents of current directory, -lh are extra parameters to give details for each file and make it human readable
+   13  ls -lR #-lR extra parameter to give details for each file sub folders
+   14  ls -lR
+   15  ls
+   16  is -lR
+   17  ls -lR
+   18  ls ..
+   19  ls -l plots/
+   20  ls ../../
+   21  ls ../css2024_day2
+   22  ls ../css2024_day2/
+   23  ls ../../Dag 2/css2024_day2
+   24  ls ../../Dag_2/css2024_day2/
+   25  ls
+   26  pwd
+   27  ls /c/Users/nicos/OneDrive/Documents/2024 - Honneurs/CSS/Week 1/Dag 3/css2024_day3
+   28  ls /c/Users/nicos/OneDrive/Documents/2024 - Honneurs/CSS/Week 1/Dag 3/css2024_day3/temp
+   29  ls /c/Users/nicos/OneDrive/Documents/2024 - Honneurs/CSS/'Week 1'/Dag_2/temp
+   30  ls /c/Users/nicos/OneDrive/Documents/'2024 - Honneurs'/CSS/'Week 1'/Dag_2/
+   31  pwd
+   32  cd ../../Dag_2/css2024_day2/
+   33  pwd
+   34  ls
+   35  #creating folders and files
+   36  #greating a folder called temp with mkdir
+   37  mkdir temp
+   38  ls
+   39  cd temp
+   40  #creating a file called notes.txt with touch
+   41  touch notes.txt
+   42  ls
+   43  #copy, rename, move and delete files
+   44  #copy notes.txt with cp command
+   45  cp notes.txt notes2.txt
+   46  ls
+   47  #renams notes.txt to notes1.txt with mv command
+   48  mv notes.txt notes1.txt
+   49  ls
+   50  #besides renaming files with mv you can also move it files. Let us move notes2.txt one folder up:
+   51  mv notes2.txt ../
+   52  ls
+   53  ls ../
+   54  #delete a file with the rm command, let us delete notes1.txt:
+   55  rm notes1.txt
+   56  ls
+   57  #We can do the same operations for copy (cp) and remove (rm) for folders, however in each case they need an extra parameter added to indicate this is a recursive operation. As it won't just copy the folder but each of the files inside it, and in the same removing files inside folders.
+   58  cd ..
+   59  ls
+   60  cp -r temp temp2
+   61  ls
+   62  rm -r temp2
+   63  ls
+   64  #Moving Multiple Files
+   65  mkdir py_folder
+   66  mv *.py py_folder
+   67  ls
+   68  ls -l py_folder
+   69  #How did we do that, we did it with the * wildcard. It is used to match zero or more characters in a file name or a path. It allows us to search for a pattern for any filename that just ends with .py. You can also specify certain characters as well if you are searching for certain filenames. For example, ? wildcard matches any single character. For example, ls a?b.txt would match any file with a name that has a “b” surrounded by an “a” and any single character, such as “a1b.txt” or “aXb.txt”.
+   70  #interacting with files
+   71  #we can view any of the contents of the files in the terminal too by using the cat command.
+   72  cd data_02
+   73  ls
+   74  cat country_data_index.csv
+   75  #If it is very large file with 1000s of lines you can use head to see the first 10 lines, and tail to see the last 10 lines of a file.
+   76  #We can also redirect content to a file using the append ">>" operater. This is useful for logging information:
+   77  echo "2024-02-01,80" >> logfile.txt
+   78  ls
+   79  echo "2024-02-01,80" >> logfile.txt
+   80  #Now what happens if you want to edit a file itself. We can use a built in terminal editor called Nano to do that.
+   81  nano notes2.txt
+   82  #find and search
+   83  find -name "day*"
+   84  find -name "patient*"
+   85  #Now there may be cases where you want to search for specific words in files, and you can use "grep" for that. For example if we want to find all rows that have the word "virginica" in it we can do it as follows:
+   86  grep -n "virginica" *.csv
+   87  pwd
+   88  cd ../../..
+   89  ls
+   90  mkdir Dag_4
+   91  cd Dag_4
+   92  touch Bash_commands_day04.txt
+   93  ls
+   94  history
