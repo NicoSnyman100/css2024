@@ -1,0 +1,39 @@
+
+nicos@Nico-ASUS MINGW64 ~/OneDrive/Documents/2024 - Honneurs/CSS/Week 1/Dag_5
+$ #!/bin/bash
+
+# Directory containing CSV files
+directory='csv_files/'
+#directory='/c/Users/BBarsch.CSIR/css2024_day03/csv_files'
+
+# List to store the sum of 'y' column values for each file
+sum_list=()
+
+# Loop through each CSV file in the directory
+for filename in "$directory"/*.csv; do
+    if [ -f "$filename" ]; then
+        # Use awk to sum the 'y' column values
+        echo $filename
+        total_sum=$(awk -F',' 'NR > 1 {sum += $2} END {print sum}' "$filename")
+
+        # Append the sum to the list
+        sum_list+=("$total_sum")
+    fi
+done
+
+# Print the list of sums
+echo "Sum of 'y' column values for each file: ${sum_list[@]}"
+csv_files//file_1.csv
+csv_files//file_10.csv
+csv_files//file_2.csv
+csv_files//file_3.csv
+csv_files//file_4.csv
+csv_files//file_5.csv
+csv_files//file_6.csv
+csv_files//file_7.csv
+csv_files//file_8.csv
+csv_files//file_9.csv
+Sum of 'y' column values for each file: 4945 5029 5400 4753 5248 4860 5084 4979 5581 5217
+
+nicos@Nico-ASUS MINGW64 ~/OneDrive/Documents/2024 - Honneurs/CSS/Week 1/Dag_5
+$
